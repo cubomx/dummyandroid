@@ -1,0 +1,33 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+    - image: cimg/android:2024.07.1
+    steps:
+    #- checkout
+    - run:
+        name: Echo
+        command: |
+          echo "Hello World"
+    - run:
+        name: Get directory
+        command: | 
+          ls -lah /home/circleci/project
+    - run: 
+        name: Install deps
+        command: | 
+          bundle install
+    - run: 
+        name: Get content of file
+        command: |
+          cat Gemfile
+    - run: 
+        name: Make build
+        command: |
+          bundle exec fastlane build
+
+workflow:
+  develop-build:
+    jobs:
+    - build
