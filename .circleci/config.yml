@@ -12,7 +12,7 @@ jobs:
     #docker:
     #- image: cimg/android:2024.07.1
     steps:
-    #- checkout
+    - checkout
     - run:
         name: Echo
         command: |
