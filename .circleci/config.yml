@@ -26,7 +26,7 @@ jobs:
         command: | 
           bundle install
     - run: 
-        name: Get content of file
+        name: Get content of Gemfile
         command: |
           cat Gemfile
     - run: 
